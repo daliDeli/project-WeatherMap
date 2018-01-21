@@ -51,7 +51,6 @@ class App extends Component {
 
   failedRequest(error) {
     console.log(error);
-    // alert("Please enter a valid city name.");
   }
 
   componentDidMount() {
@@ -65,10 +64,16 @@ class App extends Component {
 
     return (
       <div className="App container-fluid">
-
-        <div className="row col s12">
+        <div className="row">
+        <div className="col s12">
+          <h1 id="logo">
+           <img src="https://www.iconsdb.com/icons/preview/orange/sun-3-xxl.png" alt='sun'/> WeatherMap
+          </h1>
+        </div>
+        <div className="col s12">
           <Search onSearchRequest={this.getWeatherData} />
         </div >
+        </div>
         {this.state.cities.map(town => {
 
           const tempData = town.data.list.map(hour => {
@@ -80,7 +85,7 @@ class App extends Component {
 
           return (
 
-            <div className="row col s12" key={town.data.city.id}>
+            <div className="col s12" key={town.data.city.id}>
               <div className="row" id="table">
                 <div className="col s4 ">
                   City

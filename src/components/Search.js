@@ -42,7 +42,7 @@ export default class Search extends React.Component {
         return(
             <div className="container ">
                 <input type="text" value={this.state.searchString} onChange={this.searchedStringHandler} onKeyPress={this.keyPressedHandler}/>
-                <button className="grey waves-light btn" type="submit" onClick={this.renderWeatherData}>Search</button>
+                <button className=" grey lighten-5 btn" type="submit" onClick={this.renderWeatherData}>Search</button>
             </div>
         )
     }
