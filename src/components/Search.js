@@ -41,7 +41,7 @@ export default class Search extends React.Component {
     render(){
         return(
             <div className="container ">
-                <input type="text" value={this.state.searchString} onChange={this.searchedStringHandler} onKeyPress={this.keyPressedHandler}/>
+                <input type="text" value={this.state.searchString} onChange={this.searchedStringHandler} onKeyPress={this.keyPressedHandler} placeholder="Enter a city name"/>
                 <button className=" grey lighten-5 btn" type="submit" onClick={this.renderWeatherData}>Search</button>
             </div>
         )

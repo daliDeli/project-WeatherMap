@@ -5,10 +5,14 @@
   color: #F0A202;
 }
 #logo{
-  background: -webkit-linear-gradient(#F0A202, #eee);
+  background: -webkit-linear-gradient(#F0A202, #FDFFFC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 #logo img{
   height: 10vh;
+}
+.weatherData{
+  padding-top: 3vh; 
+  border-top: 3px #F0A202 solid;
 }
