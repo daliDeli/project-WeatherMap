@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import { SparklinesBars, SparklinesReferenceLine, Sparklines } from "react-sparklines";
+import _ from "lodash";
+import sunImg from "./images/sun.png";
 import Search from "./components/Search"
 import FetchService from "./services/fetchService"
-import { SparklinesBars, SparklinesReferenceLine, Sparklines } from 'react-sparklines';
 import { MapWithAMarker } from "./services/GoogleMaps";
-import _ from 'lodash';
-
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   successfulRequest(cityWeather) {
-    
+
     this.setState({
       cities: [cityWeather, ...this.state.cities],
 
@@ -57,25 +57,25 @@ class App extends Component {
     this.getWeatherData("Belgrade");
   }
 
-
   render() {
-
-
-
     return (
       <div className="App container-fluid">
         <div className="row">
           <div className="col s12">
             <h1 id="logo">
-              <img src="https://www.iconsdb.com/icons/preview/orange/sun-3-xxl.png" alt='sun' /> WeatherMap
-          </h1>
+              <img src={sunImg} alt='sun' />
+              WeatherMap
+            </h1>
           </div>
           <div className="col s12">
             <Search onSearchRequest={this.getWeatherData} />
           </div >
+          <div className="col s12">
+            <h5> Weather forecast for next 5 days.</h5>
+          </div>
         </div>
-        {this.state.cities.map((town,i) => {
-          
+        {this.state.cities.map((town, i) => {
+
           const tempData = town.data.list.map(hour => {
             return hour.main.temp;
           });
@@ -85,16 +85,12 @@ class App extends Component {
           });
           const avgTemp = Math.round(_.mean(tempData));
           const avgHum = Math.round(_.mean(humidityData));
-          
+
           return (
 
             <div key={town.data.city.id}>
               <div className="row" id="table">
-                <div className="col s12">
-                  <h5>
-                    Weather forecast for next 5 days.
-                  </h5>
-                </div>
+
                 <div className="col s4 ">
                   {town.data.city.name}
                 </div>
@@ -102,9 +98,9 @@ class App extends Component {
                   Avg. Temperature {avgTemp}	&#8451;
              </div>
                 <div className="col s4 ">
-                 Avg. Humidity {avgHum}%
+                  Avg. Humidity {avgHum}%
              </div>
-                
+
               </div>
 
               <div className="row weatherData">
