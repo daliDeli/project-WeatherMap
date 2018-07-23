@@ -5,7 +5,6 @@ import sunImg from "./images/sun.png";
 import Search from "./components/Search"
 import FetchService from "./services/fetchService"
 import { MapWithAMarker } from "./services/GoogleMaps";
-import './App.css';
 
 class App extends Component {
   constructor(props) {
