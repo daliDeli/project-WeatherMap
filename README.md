@@ -7,7 +7,6 @@ Demo: [WeatherMap](https://dalideli.github.io/project-WeatherMap/)
 ## Showcasing
 - React
 - RESTFul API
-- Async/Await
 
 ## Stack
 
@@ -24,4 +23,4 @@ Demo: [WeatherMap](https://dalideli.github.io/project-WeatherMap/)
 - Webpack 
 
 ### Package Manager: 
-- Yarn
+- npm

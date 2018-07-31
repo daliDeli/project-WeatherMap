@@ -31,16 +31,16 @@ class App extends Component {
 
   bindEventHandlers() {
 
-    this.getWeatherData = this.getWeatherData.bind(this);
-    this.successfulRequest = this.successfulRequest.bind(this);
-    this.failedRequest = this.failedRequest.bind(this);
+    // this.getWeatherData = this.getWeatherData.bind(this);
+    // this.successfulRequest = this.successfulRequest.bind(this);
+    // this.failedRequest = this.failedRequest.bind(this);
   }
 
-  getWeatherData(city) {
+  getWeatherData = (city) => {
     this.fetchService.get(city, this.successfulRequest, this.failedRequest)
   }
 
-  successfulRequest(cityWeather) {
+  successfulRequest = (cityWeather) => {
 
     this.setState({
       cities: [cityWeather, ...this.state.cities],
@@ -48,7 +48,7 @@ class App extends Component {
     }, )
   }
 
-  failedRequest(error) {
+  failedRequest = (error) => {
     console.warn(error);
   }
 
@@ -130,6 +130,7 @@ class App extends Component {
               </div>
             </div>
           )
+          
         })}
       </div >
     );

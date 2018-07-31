@@ -16,11 +16,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "yarn run build&&gh-pages -d build"
+    "deploy": "npm run build&&gh-pages -d build",
+    "flow": "flow"
   },
   "homepage": "https://daliDeli.github.io/project-WeatherMap",
   "devDependencies": {
-    "gh-pages": "^1.1.0",
-    "lodash": "^4.17.4"
+    "flow-bin": "^0.77.0",
+    "gh-pages": "^1.2.0",
+    "lodash": "^4.17.4",
+    "typescript": "^2.9.2"
   }
 }
